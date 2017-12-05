@@ -1,28 +1,17 @@
-import React from "react"
-import { StyleSheet, Text, View, Slider } from "react-native"
+import React from "react";
+import App from "./components/App";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./reducer";
+
+const store = createStore(reducer);
 
 export default class Index extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Lorem Ipsum</Text>
-        <Slider
-          maximumValue={250}
-          minimumValue={2}
-          minimumTrackTintColor={"#fff0"}
-          style={{ width: 200 }}
-          value={50}
-        />
-      </View>
-    )
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-})

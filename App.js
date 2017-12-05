@@ -1,2 +1,2 @@
-import Index from "./src/Index"
-export default Index
+import Index from "./src/index";
+export default Index;
