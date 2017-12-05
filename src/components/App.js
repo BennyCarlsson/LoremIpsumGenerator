@@ -1,14 +1,14 @@
-import React from "react";
-import { StyleSheet, Text, View, Slider } from "react-native";
-import { connect } from "react-redux";
-import { onSliderChangeValue } from "../actions";
+import React from "react"
+import { StyleSheet, Text, View, Slider } from "react-native"
+import { connect } from "react-redux"
+import { onSliderChangeValue } from "../actions"
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
   render() {
-    console.log("props", this.props);
+    console.log("props", this.props)
     return (
       <View style={styles.container}>
         <Text>Lorem Ipsum</Text>
@@ -20,27 +20,27 @@ class App extends React.Component {
           style={{ width: 200 }}
           value={this.props.sliderValue}
           onValueChange={n => {
-            this.props.onSliderChange(n);
+            this.props.onSliderChange(n)
           }}
         />
       </View>
-    );
+    )
   }
 }
 
 const mapStateToProps = state => {
-  return { sliderValue: state.sliderValue };
-};
+  return { sliderValue: state.sliderValue }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
     onSliderChange: n => {
-      dispatch(onSliderChangeValue(n));
+      dispatch(onSliderChangeValue(n))
     }
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 const styles = StyleSheet.create({
   container: {
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   }
-});
+})
