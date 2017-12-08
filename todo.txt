@@ -1,4 +1,5 @@
 counter chars:25 words:5
 + - buttons
 ad?
-
+max value 100000
+build my own random word generator
