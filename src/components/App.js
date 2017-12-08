@@ -19,6 +19,9 @@ class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.textView}>
           <WebView
+            injectedJavaScript={
+              "window.scrollTo(0,document.body.scrollHeight);"
+            }
             source={{
               html:
                 "<style>p{text-align: justify;}</style>" +
