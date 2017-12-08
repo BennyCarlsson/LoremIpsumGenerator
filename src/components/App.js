@@ -17,10 +17,11 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ flex: 1 }}>
+        <View style={styles.textView}>
           <WebView
             source={{
               html:
+                "<style>p{text-align: justify;}</style>" +
                 "<p style='text-align: justify;'>" +
                 this.props.loremIpsum +
                 "</p>"
@@ -74,7 +75,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  scrollView: {
+  textView: {
+    flex: 1,
     marginTop: 20
   },
   sliderView: {
