@@ -1,0 +1,4 @@
+counter chars:25 words:5
++ - buttons
+ad?
+scroll to bottom when adding
