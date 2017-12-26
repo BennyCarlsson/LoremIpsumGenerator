@@ -1,9 +1,11 @@
-import { getLoremIpsumText } from "./LoremIpsum"
+import { getLoremIpsumText, getLoremIpsumWordCount } from "./LoremIpsum"
 
 const defaultValue = {
   maxValue: 1000,
+  minValue: 11,
   sliderValue: 500,
-  loremIpsum: getLoremIpsumText(500)
+  loremIpsum: getLoremIpsumText(500),
+  wordCount: getLoremIpsumWordCount(500)
 }
 
 const counterReducer = (state = defaultValue, action) => {
@@ -12,7 +14,8 @@ const counterReducer = (state = defaultValue, action) => {
       return {
         ...state,
         sliderValue: action.newValue,
-        loremIpsum: getLoremIpsumText(action.newValue)
+        loremIpsum: getLoremIpsumText(action.newValue),
+        wordCount: getLoremIpsumWordCount(action.newValue)
       }
     case "SLIDER_COMPLETE":
       return {

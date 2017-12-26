@@ -1,5 +1,6 @@
 counter chars:25 words:5
+refactor and extract thingsfrom app.js
 + - buttons
-ad?
+ads?
 max value 100000
-build my own random word generator
+build my own random word/sentence generator

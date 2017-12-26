@@ -34,7 +34,7 @@ class App extends React.Component {
         <View style={styles.sliderView}>
           <Slider
             maximumValue={this.props.maxValue}
-            minimumValue={11}
+            minimumValue={this.props.minValue}
             minimumTrackTintColor={"#fff0"}
             style={styles.slider}
             value={this.props.sliderValue}
@@ -45,7 +45,9 @@ class App extends React.Component {
               this.props.onSliderComplete(n)
             }}
           />
-          <Text style={styles.numberText}>{this.props.sliderValue}</Text>
+          <Text style={styles.numberText}>
+            Characters: {this.props.sliderValue} Words: {this.props.wordCount}
+          </Text>
         </View>
       </View>
     )
@@ -55,8 +57,10 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return {
     sliderValue: state.sliderValue,
+    minValue: state.minValue,
     loremIpsum: state.loremIpsum,
-    maxValue: state.maxValue
+    maxValue: state.maxValue,
+    wordCount: state.wordCount
   }
 }
 

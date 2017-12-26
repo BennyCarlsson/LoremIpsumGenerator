@@ -340,3 +340,6 @@ Nulla finibus risus eu massa rutrum, ut interdum nisl consectetur. Nunc consecte
 export const getLoremIpsumText = n => {
   return LoremIpsumText.slice(0, n)
 }
+export const getLoremIpsumWordCount = n => {
+  return getLoremIpsumText(n).split(" ").length
+}
