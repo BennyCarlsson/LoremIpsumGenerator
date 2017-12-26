@@ -1,5 +1,4 @@
-refactor and extract thingsfrom app.js
 + - buttons
+copy button
 ads?
-max value 100000
 build my own random word/sentence generator

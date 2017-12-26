@@ -10,7 +10,7 @@ class LoremIpsumText extends React.Component {
           injectedJavaScript={"window.scrollTo(0,document.body.scrollHeight);"}
           source={{
             html:
-              "<style>p{text-align: justify;}</style>" +
+              "<style>p{text-align: justify;font-size:20px;line-height:1.4}</style>" +
               "<p style='text-align: justify;'>" +
               this.props.loremIpsum +
               "</p>"
