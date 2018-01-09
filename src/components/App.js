@@ -1,10 +1,11 @@
 import React from "react"
-import { StyleSheet, Text, View, ScrollView, Slider } from "react-native"
+import { StyleSheet, View } from "react-native"
 import { connect } from "react-redux"
 import { onSliderChangeValue, onSliderComplete } from "../actions"
 import LoremIpsumText from "./LoremIpsumText"
 import MySlider from "./MySlider"
 import Counter from "./Counter"
+import CopyButton from "./CopyButton"
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends React.Component {
         <View style={styles.sliderView}>
           <MySlider />
           <Counter />
+          <CopyButton />
         </View>
       </View>
     )

@@ -10,6 +10,7 @@ class MySlider extends React.Component {
         maximumValue={this.props.maxValue}
         minimumValue={this.props.minValue}
         minimumTrackTintColor={"#fff0"}
+        thumbTintColor={"#03a4b3"}
         style={styles.slider}
         value={this.props.sliderValue}
         onValueChange={n => {
