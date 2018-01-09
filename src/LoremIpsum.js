@@ -338,7 +338,7 @@ Mauris finibus a nunc vitae dapibus. Cras tincidunt, risus accumsan ultrices ele
 Nulla finibus risus eu massa rutrum, ut interdum nisl consectetur. Nunc consectetur eleifend magna at accumsan. Aenean velit tellus, placerat nec accumsan in, bibendum vel arcu. Fusce ex orci, rutrum non eros sed, lobortis scelerisque velit. Curabitur eu erat justo. Morbi eget posuere augue, finibus semper nunc. Integer vel aliquam tortor, ut molestie dolor. Pellentesque viverra urna ac lacus pulvinar, ut mollis urna faucibus. Integer finibus placerat ante.
 </p>`
 export const getLoremIpsumText = n => {
-  return LoremIpsumText.slice(0, n)
+  return LoremIpsumText.slice(0, n + 1)
 }
 export const getLoremIpsumWordCount = n => {
   return getLoremIpsumText(n).split(" ").length

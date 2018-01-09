@@ -32,6 +32,8 @@ export default connect(mapStateToProps, null)(LoremIpsumText)
 const styles = StyleSheet.create({
   textView: {
     flex: 1,
-    marginTop: 20
+    marginTop: 20,
+    marginLeft: 16,
+    marginRight: 16
   }
 })

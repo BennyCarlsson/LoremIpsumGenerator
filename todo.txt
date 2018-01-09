@@ -1,3 +1,4 @@
+getLoremIpsumText in LoremIpsum.js have wrong count since it also counts <p> and </p>
 + - buttons
 ads?
 build my own random word/sentence generator
