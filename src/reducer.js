@@ -8,7 +8,7 @@ const defaultValue = {
   wordCount: getLoremIpsumWordCount(500)
 }
 
-const counterReducer = (state = defaultValue, action) => {
+const reducer = (state = defaultValue, action) => {
   switch (action.type) {
     case "SLIDER_CHANGE":
       return {
@@ -26,4 +26,4 @@ const counterReducer = (state = defaultValue, action) => {
       return state
   }
 }
-export default counterReducer
+export default reducer

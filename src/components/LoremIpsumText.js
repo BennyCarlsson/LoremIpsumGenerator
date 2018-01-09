@@ -27,7 +27,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(LoremIpsumText)
+export default connect(mapStateToProps, null)(LoremIpsumText)
 
 const styles = StyleSheet.create({
   textView: {
