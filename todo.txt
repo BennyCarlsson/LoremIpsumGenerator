@@ -1,4 +1,3 @@
 + - buttons
-copy button
 ads?
 build my own random word/sentence generator
