@@ -1,4 +1,4 @@
-const LoremIpsumText = `<p>
+export const LoremIpsumText = `<p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id porttitor purus. Duis eu accumsan quam. Integer vel purus purus. Pellentesque facilisis neque mauris. Aenean blandit imperdiet aliquet. In hac habitasse platea dictumst. Nulla facilisi. Nullam porta enim libero, ut fringilla justo blandit vitae. Aenean ac tristique nulla. Nunc nec iaculis mauris.
 </p>
 <p>
@@ -337,14 +337,3 @@ Mauris finibus a nunc vitae dapibus. Cras tincidunt, risus accumsan ultrices ele
 <p>
 Nulla finibus risus eu massa rutrum, ut interdum nisl consectetur. Nunc consectetur eleifend magna at accumsan. Aenean velit tellus, placerat nec accumsan in, bibendum vel arcu. Fusce ex orci, rutrum non eros sed, lobortis scelerisque velit. Curabitur eu erat justo. Morbi eget posuere augue, finibus semper nunc. Integer vel aliquam tortor, ut molestie dolor. Pellentesque viverra urna ac lacus pulvinar, ut mollis urna faucibus. Integer finibus placerat ante.
 </p>`
-export const getLoremIpsumText = (n, x = 0) => {
-  myString = LoremIpsumText.slice(0, n + x + 1)
-  let stripedString = myString.replace(/<p>|<\/p>/g, "")
-  if (stripedString.length < n) {
-    getLoremIpsumText(n, n - stripedString.length + 1)
-  }
-  return myString
-}
-export const getLoremIpsumWordCount = n => {
-  return getLoremIpsumText(n).split(" ").length
-}
