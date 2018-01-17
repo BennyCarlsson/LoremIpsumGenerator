@@ -4,5 +4,5 @@ export const onSliderChangeValue = n => ({
 })
 export const onSliderComplete = n => ({
   type: "SLIDER_COMPLETE",
-  maxValue: n < 250 ? 500 : Math.floor(n * 2)
+  maxValue: n < 250 ? 500 : Math.floor(n * 2) > 67831 ? 67831 : Math.floor(n * 2)
 })

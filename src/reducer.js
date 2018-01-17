@@ -1,11 +1,11 @@
 import { getLoremIpsumTextChar, getLoremIpsumWordCount } from "./LoremIpsumFunctions"
 
 const defaultValue = {
-  maxValue: 1000,
+  maxValue: 500,
   minValue: 11,
   sliderValue: 500,
-  loremIpsum: getLoremIpsumTextChar(375),
-  wordCount: getLoremIpsumWordCount(375)
+  loremIpsum: getLoremIpsumTextChar(500),
+  wordCount: getLoremIpsumWordCount(500)
 }
 
 const reducer = (state = defaultValue, action) => {
