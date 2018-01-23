@@ -1,4 +1,4 @@
-import { LoremIpsumText } from "./LoremIpsum"
+import { LoremIpsumText } from "./LoremIpsumText"
 
 export const getLoremIpsumTextChar = (n) => {
   const recursiveFunction = (n, x = 0, y = 0, string = "") => {

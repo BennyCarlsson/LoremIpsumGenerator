@@ -2,7 +2,7 @@ import React from "react"
 import { StyleSheet, Text, View, WebView } from "react-native"
 import { connect } from "react-redux"
 
-class LoremIpsumText extends React.Component {
+class LoremIpsum extends React.Component {
   render() {
     return (
       <View style={styles.textView}>
@@ -12,7 +12,7 @@ class LoremIpsumText extends React.Component {
             html:
               "<style>p{text-align: justify;font-size:20px;line-height:1.4}</style>" +
               "<p style='text-align: justify;'>" +
-              this.props.loremIpsum +
+              this.props.loremIpsumText +
               "</p>"
           }}
         />
@@ -23,11 +23,11 @@ class LoremIpsumText extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    loremIpsum: state.loremIpsum
+    loremIpsumText: state.loremIpsumText
   }
 }
 
-export default connect(mapStateToProps, null)(LoremIpsumText)
+export default connect(mapStateToProps, null)(LoremIpsum)
 
 const styles = StyleSheet.create({
   textView: {

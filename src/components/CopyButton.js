@@ -11,7 +11,7 @@ import { MaterialIcons } from "@expo/vector-icons"
 class CopyButton extends React.Component {
   copy() {
     ToastAndroid.show("Copied Lorem ipsum", ToastAndroid.SHORT)
-    Clipboard.setString(this.props.loremIpsum.replace(/<p>|<\/p>/gi, ""))
+    Clipboard.setString(this.props.loremIpsumText.replace(/<p>|<\/p>/gi, ""))
   }
   render() {
     return (
@@ -38,7 +38,7 @@ class CopyButton extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    loremIpsum: state.loremIpsum
+    loremIpsumText: state.loremIpsumText
   }
 }
 

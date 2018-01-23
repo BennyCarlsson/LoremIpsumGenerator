@@ -2,7 +2,7 @@ import React from "react"
 import { StyleSheet, View } from "react-native"
 import { connect } from "react-redux"
 import { onSliderChangeValue, onSliderComplete } from "../actions"
-import LoremIpsumText from "./LoremIpsumText"
+import LoremIpsum from "./LoremIpsum"
 import MySlider from "./MySlider"
 import Counter from "./Counter"
 import CopyButton from "./CopyButton"
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <LoremIpsumText />
+        <LoremIpsum />
         <View style={styles.sliderView}>
           <MySlider />
           <Counter />
