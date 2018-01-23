@@ -15,7 +15,12 @@ export const getLoremIpsumTextChar = (n) => {
   }
   return recursiveFunction(n)
 }
-export const getLoremIpsumWordCount = n => {
-  return getLoremIpsumTextChar(n).split(" ").length
+export const getLoremIpsumWordCount = text => {
+  return text.split(" ").length
 }
-
+export const getLoremIpsumSentenceCount = text => {
+  return text.split(".").length
+}
+export const getLoremIpsumParagraphCount = text => {
+  return text.split("</p>").length
+}
