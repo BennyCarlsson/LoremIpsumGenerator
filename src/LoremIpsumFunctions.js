@@ -1,6 +1,6 @@
 import { LoremIpsumText } from "./LoremIpsumText"
 
-export const getLoremIpsumTextChar = (n) => {
+export const getLoremIpsumTextOnChar = n => {
   const recursiveFunction = (n, x = 0, y = 0, string = "") => {
     string += LoremIpsumText.slice(x, n + y + 1)
     const countStriped = string.replace(/<\/?p[^>]*>|<\/p|<\/|<p|</g, "").length
@@ -14,6 +14,10 @@ export const getLoremIpsumTextChar = (n) => {
     return string
   }
   return recursiveFunction(n)
+}
+
+export const getLoremIpsumTextOnWord = n => {
+  return LoremIpsumText.split(" ", n).join(" ");
 }
 export const getLoremIpsumWordCount = text => {
   return text.split(" ").length
