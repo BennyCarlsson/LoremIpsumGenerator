@@ -1,4 +1,3 @@
 RadioButton or something to choose what to get text on
-+ - buttons design
 ads?
 build my own random word/sentence generator

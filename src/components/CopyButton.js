@@ -24,7 +24,7 @@ class CopyButton extends React.Component {
           borderRadius: 30,
           backgroundColor: "#03a4b3",
           position: "absolute",
-          bottom: 55,
+          bottom: 65,
           right: 8,
           elevation: 8
         }}
