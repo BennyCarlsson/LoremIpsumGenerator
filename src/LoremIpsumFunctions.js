@@ -22,8 +22,14 @@ export const getLoremIpsumTextOnWord = n => {
 export const getLoremIpsumWordCount = text => {
   return text.split(" ").length
 }
+export const getLoremIpsumTextOnSentence = n => {
+  return LoremIpsumText.split(".", n).join(".") + "."
+}
 export const getLoremIpsumSentenceCount = text => {
   return text.split(".").length
+}
+export const getLoremIpsumTextOnParagraph = n => {
+  return LoremIpsumText.split("</p>", n).join("</p>") + "</p>"
 }
 export const getLoremIpsumParagraphCount = text => {
   return text.split("</p>").length

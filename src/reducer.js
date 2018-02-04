@@ -1,7 +1,7 @@
-import { getLoremIpsumTextOnWord, getLoremIpsumWordCount, getLoremIpsumSentenceCount, getLoremIpsumParagraphCount } from "./LoremIpsumFunctions"
+import { getLoremIpsumTextOnWord, getLoremIpsumWordCount, getLoremIpsumSentenceCount, getLoremIpsumParagraphCount, getLoremIpsumTextOnParagraph, getLoremIpsumTextOnSentence, getLoremIpsumTextOnChar } from "./LoremIpsumFunctions"
 
 const startNumber = 500
-const startText = getLoremIpsumTextOnWord(startNumber)
+const startText = getLoremIpsumTextOnChar(startNumber)
 const defaultValue = {
   maxValue: (startNumber * 2) + 5,
   minValue: 11,
@@ -19,7 +19,7 @@ const reducer = (state = defaultValue, action) => {
       return {
         ...state,
         sliderValue: action.newValue,
-        loremIpsumText: getLoremIpsumTextOnWord(action.newValue),
+        loremIpsumText: getLoremIpsumTextOnChar(action.newValue),
         wordCount: getLoremIpsumWordCount(text),
         sentenceCount: getLoremIpsumSentenceCount(text),
         paragraphCount: getLoremIpsumParagraphCount(text)
