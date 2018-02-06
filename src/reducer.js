@@ -1,8 +1,9 @@
 import { getLoremIpsumTextOnWord, getLoremIpsumWordCount, getLoremIpsumSentenceCount, getLoremIpsumParagraphCount, getLoremIpsumTextOnParagraph, getLoremIpsumTextOnSentence, getLoremIpsumTextOnChar } from "./LoremIpsumFunctions"
-
+import { countOnValues } from "./components/Counter"
 const startNumber = 500
 const startText = getLoremIpsumTextOnChar(startNumber)
 const defaultValue = {
+  countOn: countOnValues.WORD,
   maxValue: (startNumber * 2) + 5,
   minValue: 11,
   sliderValue: startNumber,
@@ -28,6 +29,11 @@ const reducer = (state = defaultValue, action) => {
       return {
         ...state,
         maxValue: action.maxValue
+      }
+    case "CHANGE_COUNT_ON":
+      return {
+        ...state,
+        countOn: action.value
       }
     default:
       return state

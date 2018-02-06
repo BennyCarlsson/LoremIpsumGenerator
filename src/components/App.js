@@ -1,7 +1,6 @@
 import React from "react"
 import { StyleSheet, View } from "react-native"
 import { connect } from "react-redux"
-import { onSliderChangeValue, onSliderComplete } from "../actions"
 import LoremIpsum from "./LoremIpsum"
 import MySlider from "./MySlider"
 import Counter from "./Counter"
