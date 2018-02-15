@@ -8,7 +8,7 @@ class MySlider extends React.Component {
   render() {
     return (
       <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity onPress={() => this.props.onSliderChange(this.props.sliderValue - 1)}>
+        <TouchableOpacity onPress={() => this.props.onSliderChange(this.props.sliderValue - 1, this.props.countOnValues)}>
           <MaterialCommunityIcons name="minus-circle-outline" style={styles.minusButton} size={28} />
         </TouchableOpacity>
         <Slider
@@ -19,13 +19,13 @@ class MySlider extends React.Component {
           style={styles.slider}
           value={this.props.sliderValue}
           onValueChange={n => {
-            this.props.onSliderChange(n)
+            this.props.onSliderChange(n, this.props.countOnValues)
           }}
           onSlidingComplete={n => {
             this.props.onSliderComplete(n)
           }}
         />
-        <TouchableOpacity onPress={() => this.props.onSliderChange(this.props.sliderValue + 1)}>
+        <TouchableOpacity onPress={() => this.props.onSliderChange(this.props.sliderValue + 1, this.props.countOnValues)}>
           <MaterialCommunityIcons name="plus-circle-outline" style={styles.plusButton} size={28} />
         </TouchableOpacity>
       </View>
@@ -37,13 +37,14 @@ const mapStateToProps = state => {
   return {
     sliderValue: state.sliderValue,
     minValue: state.minValue,
-    maxValue: state.maxValue
+    maxValue: state.maxValue,
+    countOnValues: state.countOn
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
-    onSliderChange: n => {
-      dispatch(onSliderChangeValue(n))
+    onSliderChange: (n, countOnValues) => {
+      dispatch(onSliderChangeValue(n, countOnValues))
     },
     onSliderComplete: n => {
       dispatch(onSliderComplete(n))

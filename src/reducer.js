@@ -1,29 +1,30 @@
-import { getLoremIpsumTextOnWord, getLoremIpsumWordCount, getLoremIpsumSentenceCount, getLoremIpsumParagraphCount, getLoremIpsumTextOnParagraph, getLoremIpsumTextOnSentence, getLoremIpsumTextOnChar } from "./LoremIpsumFunctions"
+import { getLoremIpsumText, getLoremIpsumWordCount, getLoremIpsumSentenceCount, getLoremIpsumParagraphCount } from "./LoremIpsumFunctions"
 import { countOnValues } from "./components/Counter"
-const startNumber = 500
-const startText = getLoremIpsumTextOnChar(startNumber)
+import { createStore } from "redux"
+
+const startNumber = 11
+const startText = "Lorem Ipsum"
 const defaultValue = {
   countOn: countOnValues.WORD,
   maxValue: (startNumber * 2) + 5,
   minValue: 11,
   sliderValue: startNumber,
   loremIpsumText: startText,
-  wordCount: getLoremIpsumWordCount(startText),
-  sentenceCount: getLoremIpsumSentenceCount(startText),
-  paragraphCount: getLoremIpsumParagraphCount(startText),
+  wordCount: 2,
+  sentenceCount: 1,
+  paragraphCount: 1
 }
 
 const reducer = (state = defaultValue, action) => {
   switch (action.type) {
     case "SLIDER_CHANGE":
-      const text = getLoremIpsumTextOnWord(action.newValue)
       return {
         ...state,
         sliderValue: action.newValue,
-        loremIpsumText: getLoremIpsumTextOnChar(action.newValue),
-        wordCount: getLoremIpsumWordCount(text),
-        sentenceCount: getLoremIpsumSentenceCount(text),
-        paragraphCount: getLoremIpsumParagraphCount(text)
+        loremIpsumText: action.loremIpsumText,
+        wordCount: action.wordCount,
+        sentenceCount: action.sentenceCount,
+        paragraphCount: action.paragraphCount
       }
     case "SLIDER_COMPLETE":
       return {
@@ -39,4 +40,5 @@ const reducer = (state = defaultValue, action) => {
       return state
   }
 }
-export default reducer
+
+export const store = createStore(reducer)

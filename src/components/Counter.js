@@ -69,20 +69,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    width: "100%"
+    width: "100%",
   },
   active: {
-    backgroundColor: "blue"
+    borderBottomWidth: 2,
+    borderColor: "#03a4b3",
+    fontSize: 16
   },
   numberText: {
+    fontSize: 15,
     margin: 0,
-    padding: 0
-  },
-  radioGroupStyle: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  radioButtonStyle: {
-    flex: 1
+    padding: 0,
+    marginBottom: 2
   }
 })

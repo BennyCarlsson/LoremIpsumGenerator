@@ -1,12 +1,11 @@
 import React from "react"
 import { StyleSheet, View } from "react-native"
-import { connect } from "react-redux"
 import LoremIpsum from "./LoremIpsum"
 import MySlider from "./MySlider"
 import Counter from "./Counter"
 import CopyButton from "./CopyButton"
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -23,8 +22,6 @@ class App extends React.Component {
     )
   }
 }
-
-export default App
 
 const styles = StyleSheet.create({
   container: {
