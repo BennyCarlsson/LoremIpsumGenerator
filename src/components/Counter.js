@@ -7,7 +7,7 @@ import {
   Slider,
   TouchableOpacity
 } from "react-native"
-import { changeCountOn } from "../actions"
+import { changeCountOn, onSliderChangeValue } from "../actions"
 import { connect } from "react-redux"
 
 export const countOnValues = {
@@ -27,7 +27,13 @@ class Counter extends React.Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          onPress={() => this.props.changeCountOn(countOnValues.CHARACTER)}
+          onPress={() => {
+            this.props.updateText(
+              this.props.sliderValue,
+              countOnValues.CHARACTER
+            )
+            this.props.changeCountOn(countOnValues.CHARACTER)
+          }}
         >
           <Text
             style={[
@@ -39,7 +45,10 @@ class Counter extends React.Component {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => this.props.changeCountOn(countOnValues.WORD)}
+          onPress={() => {
+            this.props.updateText(this.props.sliderValue, countOnValues.WORD)
+            this.props.changeCountOn(countOnValues.WORD)
+          }}
         >
           <Text
             style={[
@@ -51,7 +60,13 @@ class Counter extends React.Component {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => this.props.changeCountOn(countOnValues.SENTENCE)}
+          onPress={() => {
+            this.props.updateText(
+              this.props.sliderValue,
+              countOnValues.SENTENCE
+            )
+            this.props.changeCountOn(countOnValues.SENTENCE)
+          }}
         >
           <Text
             style={[
@@ -79,6 +94,9 @@ const mapDispatchToProps = dispatch => {
   return {
     changeCountOn: value => {
       dispatch(changeCountOn(value))
+    },
+    updateText: (n, countOnValues) => {
+      dispatch(onSliderChangeValue(n, countOnValues))
     }
   }
 }
