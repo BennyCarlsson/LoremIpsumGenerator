@@ -1,4 +1,8 @@
-import { getLoremIpsumText, getLoremIpsumWordCount, getLoremIpsumSentenceCount, getLoremIpsumParagraphCount } from "./LoremIpsumFunctions"
+import {
+  getLoremIpsumText,
+  getLoremIpsumWordCount,
+  getLoremIpsumSentenceCount
+} from "./LoremIpsumFunctions"
 import { countOnValues } from "./components/Counter"
 import { createStore } from "redux"
 
@@ -6,13 +10,12 @@ const startNumber = 11
 const startText = "Lorem Ipsum"
 const defaultValue = {
   countOn: countOnValues.WORD,
-  maxValue: (startNumber * 2) + 5,
+  maxValue: startNumber * 2 + 5,
   minValue: 11,
   sliderValue: startNumber,
   loremIpsumText: startText,
   wordCount: 2,
-  sentenceCount: 1,
-  paragraphCount: 1
+  sentenceCount: 1
 }
 
 const reducer = (state = defaultValue, action) => {
@@ -23,8 +26,7 @@ const reducer = (state = defaultValue, action) => {
         sliderValue: action.newValue,
         loremIpsumText: action.loremIpsumText,
         wordCount: action.wordCount,
-        sentenceCount: action.sentenceCount,
-        paragraphCount: action.paragraphCount
+        sentenceCount: action.sentenceCount
       }
     case "SLIDER_COMPLETE":
       return {
