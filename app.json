@@ -1,6 +1,12 @@
 {
   "expo": {
     "sdkVersion": "23.0.0",
-    "icon": "./loremipsumicon.png"
+    "icon": "./loremipsumicon.png",
+    "android": {
+      "package": "com.bennycarlsson.loremipsum",
+      "versionCode": 2,
+      "icon": "./loremipsumicon.png",
+      "permissions": []
+    }
   }
 }
