@@ -1,14 +1,8 @@
 import React from "react"
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Slider,
-  TouchableOpacity
-} from "react-native"
+import { StyleSheet, Text, View, Linking, TouchableOpacity } from "react-native"
 import { changeCountOn, onSliderChangeValue } from "../actions"
 import { connect } from "react-redux"
+import { MaterialIcons } from "@expo/vector-icons"
 
 export const countOnValues = {
   CHARACTER: 0,
@@ -77,6 +71,18 @@ class Counter extends React.Component {
             Sentence: {this.props.sentenceCount}
           </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.pp}
+          onPress={() =>
+            Linking.openURL(
+              "http://bennycarlsson.com/loremipsum/privacypolicy/privacy_policy.html"
+            )
+          }
+        >
+          <Text style={styles.ppText}>Privacy Policy</Text>
+          <MaterialIcons name="content-copy" size={14} color="black" />
+        </TouchableOpacity>
       </View>
     )
   }
@@ -101,7 +107,10 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Counter)
 
 const styles = StyleSheet.create({
   container: {
@@ -120,5 +129,12 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     marginBottom: 2
+  },
+  pp: {
+    flexDirection: "row"
+  },
+  ppText: {
+    fontSize: 12,
+    paddingRight: 4
   }
 })
